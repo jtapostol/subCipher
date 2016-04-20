@@ -14,6 +14,6 @@ Implementation to break substitution cipher using Diaconis' algorithm
   * recalculate plausibility for the new key
   * if the new plausibility is better, keep the new key
   * else if the new plausibility is worse, keep the new key with some probability
-4. return the decoded cipher text at the end of the iterations (~90% convergence)
+4. return the decoded cipher text at the end of the iterations (may require a couple runs)
 
 In this implementation, we use ln(Pl(f)) (where Pl is the plausibility, and f is the key) because the bigram frequencies are so small (in Diaconis' algorith, he takes the product of frequencies). It is also notable that we sometimes take plausibilities that are worse to prevent getting stuck in local maxima. As the plausibility grows, the probability that we take a lower plausibility decreases.
