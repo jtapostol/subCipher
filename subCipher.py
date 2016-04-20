@@ -1,6 +1,3 @@
-# Implementation of Diaconis' algorithm to break substitution cipher
-# Computes bigram frequency using corpus and decrypts cipher text
-
 import copy
 import math
 import random
