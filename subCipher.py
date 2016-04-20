@@ -52,15 +52,13 @@ def tryKey(key,cipher):
 def plf(key,cipher,corpusBigrams,corpusCount):    
     decodedCipher = tryKey(key,cipher) #applies f to cipher
     pl = 0
-
+    const = 1/corpusCount
     for i in range(0,len(decodedCipher)-1):
         bigram = decodedCipher[i]+decodedCipher[i+1]
         if bigram in corpusBigrams:
             pl += math.log(corpusBigrams[bigram])
-        elif bigram == '  ':
-            pl += 0
         else:
-            pl -= math.log(corpusCount) # const = 1/corpusCount
+            pl += math.log(const)# const = 1/corpusCount
     return pl
 
 # swaps random characters
